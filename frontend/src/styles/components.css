@@ -1,0 +1,446 @@
+.brand-lockup,
+.brand-mark,
+.catalog-title,
+.list-row,
+.button,
+.account-box,
+.badge,
+.panel-copy,
+.practice-card {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-lockup,
+.brand-mark {
+  gap: 12px;
+}
+
+.brand-lockup span,
+.brand-mark span {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  color: var(--paper);
+  background: linear-gradient(135deg, var(--red), var(--copper));
+}
+
+.brand-lockup strong,
+.brand-mark strong {
+  display: block;
+  font-size: 20px;
+}
+
+.brand-mark {
+  width: 100%;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.side-nav {
+  display: grid;
+  gap: 8px;
+}
+
+.side-nav button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: rgba(250, 247, 240, 0.86);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.side-nav button:hover {
+  color: var(--paper);
+  background: rgba(250, 247, 240, 0.08);
+  border-color: rgba(250, 247, 240, 0.14);
+}
+
+.account-box {
+  margin-top: auto;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(250, 247, 240, 0.16);
+  border-radius: var(--radius);
+}
+
+.account-box div {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+  flex: 1;
+}
+
+.account-box span {
+  color: rgba(250, 247, 240, 0.66);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.button,
+.icon-button {
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.button {
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 11px 15px;
+  font-weight: 800;
+}
+
+.button-primary {
+  color: var(--paper);
+  background: linear-gradient(135deg, var(--red), var(--copper));
+}
+
+.button-ghost {
+  width: max-content;
+  color: var(--red-2);
+  background: rgba(178, 58, 47, 0.08);
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: var(--paper);
+  background: rgba(250, 247, 240, 0.1);
+}
+
+.card,
+.action-card,
+.catalog-panel,
+.login-card {
+  background: rgba(250, 247, 240, 0.86);
+  border: 1px solid rgba(14, 14, 12, 0.14);
+  box-shadow: var(--shadow-soft);
+}
+
+.card {
+  padding: 18px;
+}
+
+.content-section.card {
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.action-card {
+  min-height: 172px;
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: var(--radius);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.action-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(178, 58, 47, 0.42);
+}
+
+.card-physics {
+  background: linear-gradient(180deg, rgba(83, 107, 120, 0.14), rgba(250, 247, 240, 0.9));
+}
+
+.card-chemistry {
+  background: linear-gradient(180deg, rgba(66, 107, 84, 0.15), rgba(250, 247, 240, 0.9));
+}
+
+.card-kicker,
+.eyebrow {
+  color: var(--red-2);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge {
+  width: max-content;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.badge-copper {
+  color: var(--paper);
+  background: var(--copper-2);
+  border-color: transparent;
+}
+
+.badge-physics {
+  color: var(--paper);
+  background: var(--physics);
+  border-color: transparent;
+}
+
+.badge-chemistry {
+  color: var(--paper);
+  background: var(--chemistry);
+  border-color: transparent;
+}
+
+.metric-card {
+  min-height: 126px;
+  display: grid;
+  gap: 8px;
+}
+
+.metric-card svg {
+  color: var(--red);
+}
+
+.metric-card strong {
+  font-size: 30px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+
+.segmented button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--ink-3);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.segmented .active {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.form-stack,
+.control-list,
+.list-stack,
+.formula-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.field,
+.range-field {
+  display: grid;
+  gap: 8px;
+  font-weight: 800;
+}
+
+.field input {
+  min-height: 44px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--white);
+}
+
+.range-field {
+  padding: 12px;
+  border: 1px solid rgba(14, 14, 12, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.range-field input {
+  width: 100%;
+  accent-color: var(--red);
+}
+
+.range-field strong {
+  color: var(--red-2);
+}
+
+.error-banner {
+  padding: 12px;
+  border-radius: var(--radius);
+  color: #681811;
+  background: #ffe8e2;
+  border: 1px solid #d99b91;
+}
+
+.hero-action {
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--paper);
+  background: var(--red);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.catalog-panel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius);
+}
+
+.catalog-title {
+  gap: 9px;
+}
+
+.chapter-block {
+  display: grid;
+  gap: 8px;
+}
+
+.chapter-block span {
+  font-weight: 900;
+}
+
+.chapter-block button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(14, 14, 12, 0.12);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.44);
+  cursor: pointer;
+  text-align: left;
+}
+
+.list-row {
+  width: 100%;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(14, 14, 12, 0.12);
+  border-radius: var(--radius);
+  background: rgba(250, 247, 240, 0.8);
+}
+
+.list-row.action {
+  border-style: solid;
+  cursor: pointer;
+  text-align: left;
+}
+
+.list-row .list-main {
+  display: grid;
+  gap: 2px;
+}
+
+.list-row .list-meta {
+  margin-left: auto;
+  color: var(--ink-3);
+}
+
+.list-row small {
+  display: block;
+}
+
+.formula-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.formula-card {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border: 1px solid rgba(14, 14, 12, 0.12);
+  border-radius: var(--radius);
+  background: rgba(250, 247, 240, 0.84);
+}
+
+.formula-card strong {
+  font-size: 22px;
+}
+
+.empty-state {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  border: 1px dashed rgba(14, 14, 12, 0.24);
+  border-radius: var(--radius);
+  background: rgba(250, 247, 240, 0.58);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tabs button {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--paper-2);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.tabs .active {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.feature-card {
+  min-height: 180px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.feature-card svg {
+  color: var(--red);
+}
+
+.pricing-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.pricing-strip span {
+  padding: 6px 8px;
+  border-radius: var(--radius);
+  color: var(--ink-2);
+  background: var(--paper-2);
+  font-size: 13px;
+}
