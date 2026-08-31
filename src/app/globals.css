@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  /* Brutalist Dark Theme - Pitch Black Base */
+  --color-bg-base: #000000;      
+  --color-bg-surface: #0A0A0A;   
+  --color-bg-surface-hover: #141414; 
+  --color-border: #1A1A1A;
+  --color-border-hover: #333333;
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #888888;
+  
+  /* Stark Accents - No Glows */
+  --color-accent-primary: #FF3366;   /* Harsh Pink/Red */
+  --color-accent-secondary: #00FFCC; /* Sharp Cyan */
+
+  /* Strict Spacing Scale */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+}
+
+@theme inline {
+  --color-background: var(--color-bg-base);
+  --color-foreground: var(--color-text-primary);
+  
+  --color-surface: var(--color-bg-surface);
+  --color-surface-hover: var(--color-bg-surface-hover);
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Destroy all pill shapes */
+  --radius-xl: 0rem;
+  --radius-2xl: 0rem;
+  --radius-full: 0rem; 
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base resets */
+::selection {
+  background-color: var(--color-accent-primary);
+  color: #000;
+}
+
+/* Brutalist Component Primitives */
+.brutalist-border {
+  border: 1px solid var(--color-border);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

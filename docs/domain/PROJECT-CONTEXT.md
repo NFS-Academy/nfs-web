@@ -1,0 +1,2 @@
+# NFS Academy - Project Context
+NFS Academy is a free, interactive STEM education platform providing dynamic physics, chemistry, and mathematics simulations. Modeled after self-guided platforms like Codecademy and TryHackMe, it allows users to deeply explore scientific concepts without mandatory login gates. The platform replaces static textbook learning with a rich, responsive, and visually intuitive simulation engine.
