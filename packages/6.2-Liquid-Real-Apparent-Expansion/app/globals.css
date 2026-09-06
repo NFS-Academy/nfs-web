@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-hind: var(--font-hind-siliguri), sans-serif;
+  --font-noto: var(--font-noto-serif-bengali), serif;
+}

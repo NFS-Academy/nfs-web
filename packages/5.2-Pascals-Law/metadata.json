@@ -1,0 +1,6 @@
+{
+  "name": "প্যাসকেলের সূত্র সিমুলেশন",
+  "description": "প্যাসকেলের সূত্র এবং হাইড্রোলিক প্রেসের একটি থ্রিডি ইন্টারেক্টিভ সিমুলেশন",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

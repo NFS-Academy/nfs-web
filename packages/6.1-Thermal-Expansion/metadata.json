@@ -1,0 +1,8 @@
+{
+  "name": "Remix Thermal Expansion Simulation",
+  "description": "An interactive 3D physics simulation demonstrating thermal expansion of metals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

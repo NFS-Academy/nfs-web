@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: var(--font-bangla-heading);
+  --font-body: var(--font-bangla-body);
+}
+
+body {
+  font-family: var(--font-bangla-body), sans-serif;
+}

@@ -39,30 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# ignored folders
-/.tmp/
-/.legacy/
-/.qc-tmp/
-/.scratch/
-
-# AI agents & skills
-.agents/
-.claude/
-.gemini/
-.cursor/
-skills-lock.json
-skills.json
-mcp_config.json
-mcp.json
-.mcp.json
-
-
-# IDEs & editors
-.vscode/
-.idea/
-*.swp
-*.swo
-atlas-credentials.env
-
-

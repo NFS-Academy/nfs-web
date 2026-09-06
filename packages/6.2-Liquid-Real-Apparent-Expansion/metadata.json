@@ -1,0 +1,6 @@
+{
+  "name": "Liquid Expansion Lab",
+  "description": "Interactive physics simulation demonstrating the real and apparent expansion of liquids with synchronized macroscopic and microscopic views.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

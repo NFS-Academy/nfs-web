@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+body {
+  background-color: #020617;
+  color: #f8fafc;
+  font-family: var(--font-noto-serif-bengali), 'Noto Serif Bengali', 'SolaimanLipi', serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Headings: 40px, weight 600 */
+h1, .text-heading-main {
+  font-family: var(--font-hind-siliguri), 'Hind Siliguri', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-hind-siliguri), 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Paragraph text: 18px, weight regular (400) */
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-paragraph {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-body-main {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

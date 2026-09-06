@@ -1,0 +1,8 @@
+{
+  "name": "Specific Heat Simulation",
+  "description": "Interactive physics simulation demonstrating specific heat capacity of different materials for Class 9-10 (NCTB).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Principle of Heat Exchange",
+  "description": "Interactive physics simulation demonstrating the principle of heat exchange and thermal equilibrium for Class 9-10 (NCTB Bangladesh).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
