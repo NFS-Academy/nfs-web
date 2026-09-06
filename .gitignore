@@ -52,7 +52,9 @@ next-env.d.ts
 .gemini/
 .cursor/
 skills-lock.json
+skills.json
 mcp_config.json
+mcp.json
 .mcp.json
 
 
