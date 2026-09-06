@@ -43,3 +43,31 @@ next-env.d.ts
 # ignored folders
 /.tmp/
 /.legacy/
+/.qc-tmp/
+/.scratch/
+
+# AI agents & skills
+.agents/
+.claude/
+.gemini/
+.cursor/
+skills-lock.json
+mcp_config.json
+.mcp.json
+
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+*.swo
+atlas-credentials.env
+# Ignored Simulation Packages
+packages/5.4-Torricelli-Experiment
+packages/5.2-Pascals-Law
+packages/5.1-Buoyancy-Lab
+packages/6.4-Principle-of-Heat-Exchange
+packages/6.3-Specific-Heat
+packages/6.2-Liquid-Real-Apparent-Expansion
+packages/6.1-Thermal-Expansion
+

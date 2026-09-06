@@ -28,6 +28,7 @@ This is the mandatory entry point for every repository-capable AI agent and main
 | Recent work, active snapshot | `docs/core/STATE.md` | files cited in the latest entries |
 | Historical work & past decisions archive | `docs/history/` | historical monthly logs (MEMORY-YYYY-MM.md) |
 | Skill selection | `docs/core/SKILLS.md` | the selected skill instructions |
+| MCP tools & integrations | `mcp_config.json`, `docs/architecture/SETUP.md` | `mcp_config.json`, `.mcp.json` |
 
 ## 3. Documentation Registry (3-Tier Structure)
 
@@ -57,6 +58,7 @@ This is the mandatory entry point for every repository-capable AI agent and main
 | `docs/domain/BUSINESS-RULES.md` | Mandatory business rules & security invariants | Business logic, compliance, or workflow rules change |
 | `docs/domain/PROJECT-CONTEXT.md` | Product vision, user roles, supported workflows | Product scope or target user requirements change |
 | `docs/domain/PROJECT-DIAGRAM.md` | Visual user workflow & system boundary diagram | Major user flows or system integrations change |
+| `docs/domain/CURRICULUM-MAP.md` | Comprehensive curriculum mapping & simulation links | Curriculum topics or simulation plans change |
 
 ### History & Generated Tooling
 | Document | Purpose | Update when |

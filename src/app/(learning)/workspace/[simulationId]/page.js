@@ -5,7 +5,7 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { Button } from '@/components/ui/button';
 import { notFound } from 'next/navigation';
-import ArchimedesSimulation from '@/simulations/physics/ch5-matter-and-pressure/sim-5.3-archimedes';
+import { SimulationRegistry } from '@/simulations/registry';
 
 export default async function Workspace({ params }) {
   const { simulationId } = await params;
@@ -69,16 +69,21 @@ export default async function Workspace({ params }) {
             <div className="absolute inset-0 opacity-20 z-0" style={{ backgroundImage: 'radial-gradient(#333 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
             
             {/* Simulation Mount Point */}
-            {simulationId === '5.3-archimedes' ? (
-              <ArchimedesSimulation />
-            ) : (
-              <div className="relative z-10 w-full h-full flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="text-[#888888] font-mono text-sm uppercase tracking-widest">Mounting Component...</div>
-                  <div className="text-white text-2xl font-bold uppercase tracking-tighter">{simulationId}</div>
-                </div>
-              </div>
-            )}
+            {(() => {
+              const SimulationComponent = SimulationRegistry[simulationId];
+              if (!SimulationComponent) {
+                return (
+                  <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center p-8">
+                    <div className="text-[#FF3366] mb-4 text-4xl">⚠</div>
+                    <div className="text-white text-xl font-bold uppercase tracking-tighter mb-2">SIMULATION OFFLINE</div>
+                    <div className="text-[#888888] font-mono text-xs uppercase tracking-widest max-w-sm">
+                      The physics model for `{simulationId}` is not currently mounted in the active registry.
+                    </div>
+                  </div>
+                );
+              }
+              return <SimulationComponent />;
+            })()}
           </div>
         </div>
       </div>

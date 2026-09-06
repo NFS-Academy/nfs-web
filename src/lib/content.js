@@ -27,7 +27,7 @@ export function getSimulationContent(simulationId) {
     return null;
   }
 
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const fileContents = fs.readFileSync(/*turbopackIgnore: true*/ filePath, 'utf8');
   const { data, content } = matter(fileContents);
 
   return {

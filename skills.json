@@ -35,6 +35,24 @@
       ]
     },
     {
+      "source": "leonxlnx/taste-skill",
+      "skills": [
+        "design-taste-frontend-v1",
+        "high-end-visual-design",
+        "imagegen-frontend-web"
+      ]
+    },
+    {
+      "source": "obra/superpowers",
+      "skills": [
+        "brainstorming",
+        "requesting-code-review",
+        "test-driven-development",
+        "using-superpowers",
+        "writing-plans"
+      ]
+    },
+    {
       "source": "rebyteai-template/rebyte-skills",
       "skills": [
         "awwwards-landing-page"
@@ -44,6 +62,12 @@
       "source": "vercel-labs/agent-skills",
       "skills": [
         "web-design-guidelines"
+      ]
+    },
+    {
+      "source": "vercel-labs/skills",
+      "skills": [
+        "find-skills"
       ]
     }
   ]

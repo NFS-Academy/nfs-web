@@ -1,39 +1,12 @@
 import Link from 'next/link';
 import { Logo } from '@/components/ui/logo';
-import { Button } from '@/components/ui/button';
+import { PublicHeader } from './_components/PublicHeader';
 
 export default function PublicLayout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white selection:bg-[#FF3366] selection:text-black">
       
-      {/* Brutalist Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-[#1A1A1A] bg-black">
-        <div className="px-8 md:px-16 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-12">
-            <Link href="/" className="text-xl font-bold uppercase tracking-tighter flex items-center gap-3">
-              <Logo />
-              NFS Academy
-            </Link>
-            
-            <nav className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest text-[#888888]">
-              <Link href="/catalog" className="hover:text-white transition-colors">Directory</Link>
-              <Link href="/pricing" className="hover:text-white transition-colors">Access Passes</Link>
-              <Link href="/about" className="hover:text-white transition-colors">Manifesto</Link>
-            </nav>
-          </div>
-          
-          <div className="flex items-center gap-6">
-            <Link href="/login" className="text-[10px] font-mono uppercase tracking-widest text-[#888888] hover:text-white transition-colors hidden sm:block">
-              Authenticate
-            </Link>
-            <Link href="/register">
-              <Button variant="primary" size="sm" className="uppercase text-[10px] tracking-widest">
-                Initialize Account
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <PublicHeader />
 
       <main className="flex-1 flex flex-col">
         {children}

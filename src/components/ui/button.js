@@ -1,9 +1,7 @@
 "use client";
 
-import { forwardRef, useRef } from "react";
+import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const Button = forwardRef(({ 
   className, 
@@ -13,61 +11,34 @@ const Button = forwardRef(({
   ...props 
 }, ref) => {
   
-  const innerRef = useRef(null);
-  const hoverBgRef = useRef(null);
-  
-  const { contextSafe } = useGSAP({ scope: innerRef });
-
-  const handleMouseEnter = contextSafe(() => {
-    if (variant !== 'ghost' && variant !== 'link') {
-      gsap.to(hoverBgRef.current, { scaleX: 1, duration: 0.3, ease: "power3.out" });
-      gsap.to(innerRef.current, { scale: 0.98, duration: 0.3, ease: "power3.out" });
-    }
-  });
-
-  const handleMouseLeave = contextSafe(() => {
-    if (variant !== 'ghost' && variant !== 'link') {
-      gsap.to(hoverBgRef.current, { scaleX: 0, duration: 0.4, ease: "power3.out" });
-      gsap.to(innerRef.current, { scale: 1, duration: 0.4, ease: "power3.out" });
-    }
-  });
-
-  const baseStyles = "relative inline-flex items-center justify-center font-sans font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF3366] focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:pointer-events-none rounded-none overflow-hidden select-none";
+  const baseStyles = "relative inline-flex items-center justify-center font-sans font-medium transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-black disabled:opacity-50 disabled:pointer-events-none rounded-full overflow-hidden select-none active:scale-[0.98] group";
   
   const variants = {
-    primary: "bg-white text-black border border-white",
-    secondary: "bg-transparent text-white border border-[#333333] hover:border-white",
-    ghost: "bg-transparent text-[#888888] hover:text-white",
-    danger: "bg-[#FF3366] text-white border border-[#FF3366]",
+    primary: "bg-slate-900 text-white dark:bg-white dark:text-slate-900 border border-transparent hover:bg-slate-800 dark:hover:bg-slate-100 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] dark:shadow-[0_4px_14px_0_rgba(255,255,255,0.1)]",
+    secondary: "bg-white dark:bg-black text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5",
+    ghost: "bg-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5",
+    danger: "bg-rose-500 text-white border border-transparent hover:bg-rose-600 shadow-[0_4px_14px_0_rgba(244,63,94,0.3)]",
   };
 
   const sizes = {
-    sm: "h-9 px-4 text-xs",
-    md: "h-12 px-6 text-sm",
-    lg: "h-16 px-8 text-base",
+    sm: "h-9 px-5 text-xs",
+    md: "h-11 px-6 text-sm",
+    lg: "h-14 px-8 text-base",
   };
 
   return (
     <button
       ref={ref}
       className={cn(baseStyles, variants[variant], sizes[size], className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       {...props}
     >
-      <div ref={innerRef} className="relative z-10 w-full flex items-center justify-center gap-2">
+      <div className="relative z-10 w-full flex items-center justify-center gap-2">
         {children}
       </div>
       
-      {/* Brutalist hover fill block */}
-      {variant !== 'ghost' && variant !== 'link' && (
-        <div 
-          ref={hoverBgRef}
-          className={cn(
-            "absolute inset-0 z-0 origin-left scale-x-0",
-            variant === 'primary' ? "bg-[#FF3366]" : "bg-white"
-          )}
-        />
+      {/* Inner highlight for premium hardware feel */}
+      {variant === 'primary' && (
+        <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] dark:shadow-[inset_0_-1px_1px_rgba(0,0,0,0.15)] pointer-events-none" />
       )}
     </button>
   );

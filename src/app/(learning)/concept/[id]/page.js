@@ -1,63 +1,83 @@
 import Link from 'next/link';
+import { hydrateConcept, chapters, subjects } from '@/components/legacy/data/mockData';
+import { ArrowLeft, Beaker } from 'lucide-react';
+import { notFound } from 'next/navigation';
+import SimulationViewer from './SimulationViewer';
 
-export default function ConceptPage({ params }) {
+export default async function ConceptPage({ params }) {
+  const unwrappedParams = await params;
+  const concept = hydrateConcept(unwrappedParams.id);
+  
+  if (!concept) {
+    notFound();
+  }
+
+  const chapter = chapters.find(c => c.id === concept.chapterId);
+  const subject = subjects.find(s => s.id === chapter?.subjectId);
+
+  const simulationUrl = concept.simId ? `/simulations/${concept.simId}` : null;
+
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      {/* Breadcrumb */}
-      <div className="text-sm text-gray-500 flex gap-2">
-        <Link href="/catalog" className="hover:text-gray-300">Physics (9-10)</Link>
-        <span>/</span>
-        <span className="text-gray-300">Chapter 3: Force</span>
-      </div>
-
-      <div>
-        <h1 className="text-3xl font-bold text-white mb-4">Newton's Second Law</h1>
-        <p className="text-gray-400 text-lg">
-          Understand how force, mass, and acceleration are related. The rate of change of momentum of a body is directly proportional to the applied force.
-        </p>
-      </div>
-
-      {/* Action Area */}
-      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 flex flex-col md:flex-row gap-6 items-center justify-between">
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-white mb-2">Interactive Simulation</h3>
-          <p className="text-gray-400 text-sm">Push a block on different surfaces to see how mass and friction affect acceleration.</p>
-        </div>
-        <Link href="/workspace/newtons-second-law" className="shrink-0 bg-green-600 hover:bg-green-500 text-white font-medium py-3 px-8 rounded-lg transition-colors">
-          Open Simulation
-        </Link>
-      </div>
-
-      {/* Formulas */}
-      <div>
-        <h3 className="text-xl font-bold text-white mb-4">Key Formulas</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-5">
-            <div className="text-2xl font-serif text-green-400 mb-2">F = ma</div>
-            <p className="text-sm text-gray-400">Force equals mass times acceleration.</p>
-            <div className="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500 flex justify-between">
-              <span>F = Force (Newtons, N)</span>
-              <span>m = Mass (kg)</span>
-            </div>
-          </div>
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-5">
-            <div className="text-2xl font-serif text-green-400 mb-2">F = (mv - mu) / t</div>
-            <p className="text-sm text-gray-400">Force is the rate of change of momentum.</p>
-            <div className="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500 flex justify-between">
-              <span>v = Final velocity</span>
-              <span>u = Initial velocity</span>
-            </div>
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050505] text-slate-900 dark:text-white">
+      {/* Premium Header */}
+      <div className="border-b border-black/5 dark:border-white/5 bg-white/50 dark:bg-black/50 backdrop-blur-xl sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-4 text-sm font-mono uppercase tracking-widest text-slate-500 dark:text-[#AAAAAA]">
+            <Link href="/catalog" className="hover:text-rose-500 transition-colors flex items-center gap-2">
+              <ArrowLeft size={16} /> Directory
+            </Link>
+            <span>/</span>
+            <Link href={`/catalog?subject=${subject?.id}`} className="hover:text-rose-500 transition-colors">{subject?.title}</Link>
+            <span>/</span>
+            <span className="text-slate-900 dark:text-white truncate max-w-[200px]">{chapter?.title}</span>
           </div>
         </div>
       </div>
 
-      {/* Practice */}
-      <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-        <h3 className="text-lg font-bold text-white mb-2">Test Your Knowledge</h3>
-        <p className="text-gray-400 text-sm mb-4">Try 5 board-style practice problems based on this concept.</p>
-        <Link href={`/practice/${params?.id || 'newtons-second-law'}`} className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-6 rounded border border-gray-700 transition-colors">
-          Start Practice
-        </Link>
+      <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 lg:grid-cols-3 gap-16">
+        {/* Left Column: Concept Info */}
+        <div className="lg:col-span-1 flex flex-col gap-12">
+          <div className="space-y-6">
+            <div className="text-[10px] font-mono text-rose-500 uppercase tracking-widest">{concept.sourceRef}</div>
+            <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-none">{concept.title}</h1>
+            <p className="text-lg text-slate-600 dark:text-[#AAAAAA] leading-relaxed">
+              {concept.objective}
+            </p>
+          </div>
+
+          {concept.formulas && concept.formulas.length > 0 && (
+            <div className="space-y-6">
+              <h3 className="text-sm font-mono text-[#AAAAAA] uppercase tracking-widest border-b border-black/5 dark:border-white/10 pb-4">Computational Formulas</h3>
+              <div className="flex flex-col gap-4">
+                {concept.formulas.map(formula => (
+                  <div key={formula.id} className="bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 p-6 rounded-2xl shadow-sm">
+                    <div className="text-2xl font-serif text-slate-900 dark:text-white mb-4">{formula.display}</div>
+                    <div className="text-xs text-slate-500 dark:text-[#888888] font-mono leading-relaxed mb-4">
+                      {formula.variables}
+                    </div>
+                    <div className="text-[10px] font-mono text-rose-500 uppercase tracking-widest border-t border-black/5 dark:border-white/10 pt-4">
+                      Unit: {formula.unit}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 p-8 rounded-3xl text-center">
+            <div className="w-12 h-12 bg-white dark:bg-black rounded-full flex items-center justify-center mx-auto mb-4 border border-black/5 dark:border-white/10 shadow-sm">
+              <Beaker size={20} className="text-rose-500" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Test Your Knowledge</h3>
+            <p className="text-slate-600 dark:text-[#AAAAAA] text-sm mb-6">Put {concept.title} into practice with algorithmic problem sets.</p>
+            <Link href={`/practice/${concept.id}`} className="inline-block w-full bg-slate-900 dark:bg-white text-white dark:text-black font-bold uppercase tracking-widest text-xs py-4 px-6 rounded-xl hover:bg-slate-800 dark:hover:bg-gray-200 transition-colors">
+              Start Practice
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Column: 3D Simulation Embedded */}
+        <SimulationViewer simulationUrl={simulationUrl} />
       </div>
     </div>
   );

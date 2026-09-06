@@ -1,5 +1,12 @@
-import { chapters, concepts, formulas, grades, plans, seedUsers, simulations, subjects } from "./seedData.js";
+import { users as seedUsers } from "./seedData.js";
 
+const grades = [];
+const subjects = [];
+const chapters = [];
+const concepts = [];
+const formulas = [];
+const simulations = [];
+const plans = [];
 const progress = [];
 const attempts = [];
 

@@ -42,6 +42,7 @@ export default function LearningLayout({ children }) {
         <nav className="flex-1 p-8 space-y-2 overflow-y-auto hide-scrollbar">
           <div className="text-[10px] font-mono text-[#888888] uppercase tracking-[0.2em] mb-4">Directory</div>
           <NavItem href="/dashboard" label="Dashboard" active={pathname === '/dashboard'} />
+          <NavItem href="/profile" label="Profile" active={pathname === '/profile'} />
           <NavItem href="/catalog" label="Curriculum" active={pathname === '/catalog'} />
           <NavItem href="/history" label="Activity Log" active={pathname === '/history'} />
         </nav>
@@ -70,9 +71,9 @@ export default function LearningLayout({ children }) {
               <button className="px-4 py-2 text-[10px] font-mono uppercase tracking-widest bg-white text-black">EN</button>
               <button className="px-4 py-2 text-[10px] font-mono uppercase tracking-widest text-[#888888] hover:text-white transition-colors">BN</button>
             </div>
-            <div className="w-10 h-10 bg-[#1A1A1A] border border-[#333333] flex items-center justify-center text-xs font-mono">
+            <Link href="/profile" className="w-10 h-10 bg-[#1A1A1A] border border-[#333333] hover:border-[#FF3366] hover:text-[#FF3366] transition-colors flex items-center justify-center text-xs font-mono">
               NM
-            </div>
+            </Link>
           </div>
         </header>
         

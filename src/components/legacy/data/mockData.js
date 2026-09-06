@@ -53,6 +53,20 @@ export const chapters = [
     order: 3
   },
   {
+    id: "physics-9-10-matter-pressure",
+    subjectId: "physics-9-10",
+    title: "Chapter 5: State of Matter & Pressure",
+    source: "../plan/chapters/chapter 5.MD",
+    order: 5
+  },
+  {
+    id: "physics-9-10-heat",
+    subjectId: "physics-9-10",
+    title: "Chapter 6: Effect of Heat on Matter",
+    source: "../plan/chapters/chapter 6.MD",
+    order: 6
+  },
+  {
     id: "chemistry-9-10-mvp",
     subjectId: "chemistry-9-10",
     title: "Starter Chemistry Labs",
@@ -113,34 +127,92 @@ export const concepts = [
     tone: "physics"
   },
   {
-    id: "concept-neutralization",
-    chapterId: "chemistry-9-10-mvp",
-    title: "Acid-Base Neutralization",
-    objective: "Explore pH, indicator color, and neutralization.",
+    id: "concept-buoyancy",
+    chapterId: "physics-9-10-matter-pressure",
+    title: "Buoyancy Lab",
+    objective: "Explore the buoyant force exerted by fluids on objects.",
     formulas: [],
-    simulations: ["sim-neutralization"],
-    sourceRef: "Chemistry MVP",
-    tone: "chemistry"
+    simulations: [],
+    sourceRef: "Chapter 5 Section 5.1",
+    tone: "physics",
+    simId: "buoyancy-lab"
   },
   {
-    id: "concept-precipitation",
-    chapterId: "chemistry-9-10-mvp",
-    title: "Precipitation Reaction",
-    objective: "Mix ions and observe insoluble product formation.",
+    id: "concept-pascals-law",
+    chapterId: "physics-9-10-matter-pressure",
+    title: "Pascal's Law",
+    objective: "Understand pressure transmission in enclosed fluids.",
     formulas: [],
-    simulations: ["sim-precipitation"],
-    sourceRef: "Chemistry MVP",
-    tone: "chemistry"
+    simulations: [],
+    sourceRef: "Chapter 5 Section 5.2",
+    tone: "physics",
+    simId: "pascals-law"
   },
   {
-    id: "concept-dry-cell",
-    chapterId: "chemistry-9-10-mvp",
-    title: "Dry Cell Behavior",
-    objective: "Identify dry-cell parts and electron/current direction.",
+    id: "concept-archimedes",
+    chapterId: "physics-9-10-matter-pressure",
+    title: "Archimedes' Principle",
+    objective: "Understand apparent weight loss in fluids.",
     formulas: [],
-    simulations: ["sim-dry-cell"],
-    sourceRef: "Chemistry MVP",
-    tone: "chemistry"
+    simulations: [],
+    sourceRef: "Chapter 5 Section 5.3",
+    tone: "physics",
+    simId: "archimedes"
+  },
+  {
+    id: "concept-torricelli",
+    chapterId: "physics-9-10-matter-pressure",
+    title: "Torricelli's Experiment",
+    objective: "Measure atmospheric pressure using a mercury barometer.",
+    formulas: [],
+    simulations: [],
+    sourceRef: "Chapter 5 Section 5.4",
+    tone: "physics",
+    simId: "torricelli-experiment"
+  },
+  {
+    id: "concept-thermal-expansion",
+    chapterId: "physics-9-10-heat",
+    title: "Thermal Expansion",
+    objective: "Observe how materials expand when heated.",
+    formulas: [],
+    simulations: [],
+    sourceRef: "Chapter 6 Section 6.1",
+    tone: "physics",
+    simId: "thermal-expansion"
+  },
+  {
+    id: "concept-liquid-expansion",
+    chapterId: "physics-9-10-heat",
+    title: "Liquid Real & Apparent Expansion",
+    objective: "Differentiate between real and apparent expansion of liquids.",
+    formulas: [],
+    simulations: [],
+    sourceRef: "Chapter 6 Section 6.2",
+    tone: "physics",
+    simId: "liquid-real-apparent-expansion"
+  },
+  {
+    id: "concept-specific-heat",
+    chapterId: "physics-9-10-heat",
+    title: "Specific Heat",
+    objective: "Learn about the heat capacity of different substances.",
+    formulas: [],
+    simulations: [],
+    sourceRef: "Chapter 6 Section 6.3",
+    tone: "physics",
+    simId: "specific-heat"
+  },
+  {
+    id: "concept-heat-exchange",
+    chapterId: "physics-9-10-heat",
+    title: "Principle of Heat Exchange",
+    objective: "Study heat transfer between objects of different temperatures.",
+    formulas: [],
+    simulations: [],
+    sourceRef: "Chapter 6 Section 6.4",
+    tone: "physics",
+    simId: "principle-of-heat-exchange"
   }
 ];
 

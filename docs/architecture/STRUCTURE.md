@@ -8,6 +8,7 @@
 | `backend/` | (Legacy) Express/MongoDB application and API routes. |
 | `docs/` | Governed project knowledge base, logbook, and generated code map. |
 | `docs_raw/` | Raw planning documents (curriculum, simulations, system-plan). |
+| `mcp_config.json` | Multi-agent Model Context Protocol tool configuration (GitHub, MongoDB, Chrome DevTools). |
 | `.qc-tmp/` | Gitignored in-project scratch space (if needed). |
 
 ## Future Next.js Structure (Planned)

@@ -26,9 +26,10 @@ When the user asks to **"update the agents to docs folder properly"**, **"adopt 
 ## 1. Reading Order (always)
 
 1. Read this file first.
-2. Read `docs/core/START-HERE.md` — it routes every request to the smallest relevant context.
-3. Read only the topic docs the routing table points to. The docs tell you exactly which folder, file, and line range to touch.
-4. Read code only after the docs located it. Never scan or grep the whole repo to build context; that is a waste and a failure of this system.
+2. Check `mcp_config.json` (or `.mcp.json`) — discover and connect available project MCP tools (GitHub, MongoDB, Chrome DevTools).
+3. Read `docs/core/START-HERE.md` — it routes every request to the smallest relevant context.
+4. Read only the topic docs the routing table points to. The docs tell you exactly which folder, file, and line range to touch.
+5. Read code only after the docs located it. Never scan or grep the whole repo to build context; that is a waste and a failure of this system.
 
 ---
 
@@ -76,8 +77,12 @@ When the user asks to **"update the agents to docs folder properly"**, **"adopt 
 
 ---
 
-## 7. Skills & Capabilities
+## 7. Skills, Capabilities & MCP Tools
 
+- **Project MCP Configuration**: All project MCP servers are declared in `mcp_config.json` (and `.mcp.json`). Any AI agent (Antigravity, Claude Code, Cursor, Codex, OpenCode) must read this file to utilize integrated tools:
+  - `github`: Repository operations via `@modelcontextprotocol/server-github` (configured with `GITHUB_PERSONAL_ACCESS_TOKEN`).
+  - `mongodb`: Database queries and schema inspection via `mongodb-mcp-server` (configured via `MDB_CONNECTION_STRING` in `mcp_config.json` / `.env.local`).
+  - `chrome-devtools`: Headless browser testing and inspection via `chrome-devtools-mcp`.
 - Load a skill only when the task matches its description (`docs/core/SKILLS.md` registry). Read the selected skill completely before using it.
 - When a capability is missing, search for installable skills or plugins, then record the result in `docs/core/SKILLS.md`.
 
@@ -103,3 +108,13 @@ When the user asks to **"update the agents to docs folder properly"**, **"adopt 
 - **Non-Negotiable Business Rules** (see `docs/domain/BUSINESS-RULES.md`):
   - Rule 1: [Auto-populated or specified by owner]
   - Rule 2: [Auto-populated or specified by owner]
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

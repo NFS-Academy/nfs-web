@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  // transpilePackages removed to let native workspace resolution handle it without forcing full parse
 };
 
 export default nextConfig;
