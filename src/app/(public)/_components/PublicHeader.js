@@ -7,15 +7,18 @@ import { Menu, X } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export function PublicHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navLinks = [
-    { href: '/catalog', label: 'Directory' },
-    { href: '/pricing', label: 'Access Passes' },
-    { href: '/about', label: 'Manifesto' },
+    { href: '/catalog', label: t('header.directory') },
+    { href: '/pricing', label: t('header.access_passes') },
+    { href: '/about', label: t('header.manifesto') },
   ];
 
   return (
@@ -24,7 +27,7 @@ export function PublicHeader() {
         <div className="flex items-center gap-12">
           <Link href="/" className="text-xl font-bold uppercase tracking-tighter flex items-center gap-3 active:scale-[0.98] transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 text-slate-900 dark:text-white">
             <Logo />
-            NFS Academy
+            {t('header.title')}
           </Link>
           
           <nav className="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400">
@@ -47,14 +50,17 @@ export function PublicHeader() {
         </div>
         
         <div className="flex items-center gap-6">
-          <ThemeToggle />
+          <div className="flex items-center gap-3">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
           <div className="hidden md:flex items-center gap-6">
             <Link href="/login" className="text-[10px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-rose-500">
-              Sign In
+              {t('header.sign_in')}
             </Link>
             <Link href="/register" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
               <Button variant="primary" size="sm" className="uppercase text-[10px] tracking-widest">
-                Enroll Now
+                {t('header.enroll_now')}
               </Button>
             </Link>
           </div>
@@ -95,12 +101,12 @@ export function PublicHeader() {
           <div className="flex flex-col gap-4">
             <Link href="/login" onClick={() => setIsMenuOpen(false)} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
               <Button variant="outline" className="w-full justify-center uppercase text-[10px] tracking-widest border-slate-200 dark:border-white/10 hover:border-slate-400 dark:hover:border-white">
-                Sign In
+                {t('header.sign_in')}
               </Button>
             </Link>
             <Link href="/register" onClick={() => setIsMenuOpen(false)} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">
               <Button variant="primary" className="w-full justify-center uppercase text-[10px] tracking-widest">
-                Enroll Now
+                {t('header.enroll_now')}
               </Button>
             </Link>
           </div>

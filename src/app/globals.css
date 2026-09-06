@@ -9,6 +9,8 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
     @apply bg-[#FDFBF7] text-slate-900 transition-colors duration-500 antialiased selection:bg-rose-500 selection:text-white;
